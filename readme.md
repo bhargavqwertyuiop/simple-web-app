@@ -9,6 +9,4 @@ A personal website built with HTML, CSS, and JavaScript.
 - Scroll animations using AOS library
 - Deployed on GitHub Pages
 
-### Deploy
-1. Push to GitHub `main`.
-2. Enable GitHub Pages in repo settings.
+
