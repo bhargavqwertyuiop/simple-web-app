@@ -1,6 +1,6 @@
 # Simple Static Website
 
-A personal website built with HTML, CSS, and JavaScript.
+A personal website built with HTML, CSS, and JavaScript. 
 
 ## v1.0 Features
 - Form validation in JS
