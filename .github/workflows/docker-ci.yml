@@ -1,5 +1,4 @@
 name: Docker CI/CD
-
 on:
   push:
     branches:
@@ -10,6 +9,17 @@ on:
       - dev
 
 jobs:
+  secureci:
+    uses: Hrushi-d/Secure-CI/.github/workflows/secureci.yml@v1
+    with:
+      image-name: ghcr.io/${{ github.repository }}
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      security-events: write
+      
+
   build-and-push:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +44,7 @@ jobs:
           context: .
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/static-website:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/static-website:fe7f020f635bba6a65185aceefd5532803b732a5
             ${{ secrets.DOCKERHUB_USERNAME }}/static-website:${{ github.sha }}
 
       - name: Deploy to GitHub Pages
